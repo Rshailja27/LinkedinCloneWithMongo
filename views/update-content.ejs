@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style2.css"> 
+</head>
+<body>
+    <div class="container">
+       
+        <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+            <div class="create-data">
+                <h1><a href="/posts">LinkedIn</a></h1>
+                <h1>Edit your Profile</h1>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<%= post.username %>" required>
+            </div>
+            <div class="create-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= post.name %>">
+            </div>
+            <div class="create-data">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" cols="40" rows="3"><%= post.content %></textarea>
+            </div>
+            <div class="create-data">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div class="create-data">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+        
+    </div>
+    
+</body>
+</html>
